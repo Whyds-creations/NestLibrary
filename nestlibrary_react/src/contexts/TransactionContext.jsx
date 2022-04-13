@@ -10,7 +10,7 @@ const createEthereumContract = () =>
 {
     const provider = new ethers.providers.Web3Provider( ethereum );
     const signer = provider.getSigner();
-    const transactionsContract = new ethers.Contract( LiBAddress, LibAbi, signer );
+    const transactionsContract = new ethers.Contract( signer );
 
     return transactionsContract;
 };
