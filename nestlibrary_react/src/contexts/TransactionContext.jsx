@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ethers } from "ethers";
-import { WakandaTokenAbi, WakandaTokenAddress } from "../utilis/constants";
+
 const { ethereum } = window;
 
 
@@ -10,7 +10,7 @@ const createEthereumContract = () =>
 {
     const provider = new ethers.providers.Web3Provider( ethereum );
     const signer = provider.getSigner();
-    const transactionsContract = new ethers.Contract( WakandaTokenAddress, WakandaTokenAbi, signer );
+    const transactionsContract = new ethers.Contract( LiBAddress, LibAbi, signer );
 
     return transactionsContract;
 };
