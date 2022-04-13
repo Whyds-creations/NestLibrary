@@ -1,5 +1,8 @@
-import WakandaAbi from './WakandaToken.json';
+// Import of abi json file
 
-export const WakandaTokenAbi = WakandaAbi.abi;
+export const Abi = Abi.abi;
 
-export const WakandaTokenAddress = '0x166Fa05046d3ab00da017449AcCE38D99b8A4072';
+export const Address = '0x0000000000000000000000000000000000000000';
+
+
+//Will Update the above values later as soon as smart contract is ready

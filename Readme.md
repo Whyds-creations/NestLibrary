@@ -12,6 +12,8 @@
 
 - In the different folders, run `npm install`
 
+-  Before you push , make sure you have commit already and pull first e.g  `git pull upstream main`, Then go ahead and push  
+
 - Get the latest code from the parent repo and merge : `git pull upstream main`
 
 - You can start working on your task.
