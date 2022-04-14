@@ -1,6 +1,15 @@
-import logo from './images/image2.png'
 
-const Body = () => {   return (
+import React, { useContext } from 'react';
+import { TransactionContext } from '../contexts/TransactionContext';
+import logo from './images/image2.png';
+import { Loader } from "../components";
+
+
+
+const Body = () =>
+{
+  const { connectWallet, isLoading } = useContext( TransactionContext );
+  return (
   <div className='flex flex-row justify-center items-center mt-20'>
 
     <div className='w-1/3 h-1/3'>
@@ -13,11 +22,15 @@ const Body = () => {   return (
        
      </div>
      
-     <div>
-     <button 
-      type = "button" className='bg-black rounded-lg px-7 py-2 text-white'>
-        Connect Wallet
-      </button>
+        <div>
+          
+          { isLoading
+            ? <Loader />
+            :
+            <button type="button" className='bg-black rounded-lg px-7 py-2 text-white' onClick={ connectWallet }>
+              Connect Wallet
+            </button>
+          }
      </div>
    
      </div>
