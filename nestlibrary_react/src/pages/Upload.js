@@ -1,7 +1,11 @@
 import React from 'react'
+import {UploadNavBar, UploadMain} from "../components"
 
 export default function Upload() {
   return (
-    <div>Upload</div>
+    <div>
+      <UploadNavBar />
+      <UploadMain />
+    </div>
   )
 }
