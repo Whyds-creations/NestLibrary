@@ -38,7 +38,10 @@ export const TransactionProvider = ( { children } ) =>
             }
             else
             {
-                setCurrentAccount(" ");
+                // setCurrentAccount( " " );
+                // eslint-disable-next-line no-const-assign
+                // ethereum = undefined;
+                window.reload();
                 console.log( "No accounts found" );
             }
         } catch ( error )
@@ -79,7 +82,11 @@ export const TransactionProvider = ( { children } ) =>
         try
         {
             // if ( ethereum ) return alert( "Please instal MetaMask." );
-            setCurrentAccount( " " );
+            await ethereum.request( { method: "eth_requestAccounts", } );
+
+            setCurrentAccount( " " )
+
+           
             window.location.reload();
         } catch ( error )
         {
