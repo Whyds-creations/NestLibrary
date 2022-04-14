@@ -63,15 +63,17 @@ contract Filestroage {
     } 
 
     // private function to ensure shared file is a private file
-    function privateFilePresent( address _owner, string memory hash) private returns (bool) {
+    function privateFilePresent( address _owner, string memory hash) private view returns (bool value) {
+        bool result;
         Privatefile[] memory files = privatefiles[_owner];
         for( uint i=0; i<files.length; i++) {
             if(keccak256(abi.encodePacked(files[i].ipfsHash)) == keccak256(abi.encodePacked(hash))) {
-                return true;
+                result = true;
             }else {
-                return false;
+                result = false;
             }
         } 
+        return result;
     }
 
     // function to create new files base on either public or private
@@ -110,8 +112,7 @@ contract Filestroage {
     }
 
     // function to get files recieved by other users
-    function getSharedFile() public returns (sharedFile[] memory) {
+    function getSharedFile() public view returns (sharedFile[] memory) {
       return shared_files[msg.sender];
-      emit ReturnedFiles("shared files returned");
     }
 }
