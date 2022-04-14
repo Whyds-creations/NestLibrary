@@ -2,7 +2,7 @@
 
 pragma solidity >=0.7.0 <0.9.0;
 
-contract Filestroage {
+contract Library {
     string public name;
     uint public CountPublic;
     uint public countPrivate;
