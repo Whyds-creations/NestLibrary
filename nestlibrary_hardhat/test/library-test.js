@@ -16,10 +16,22 @@ describe('Library Contract', () => {
     beforeEach(async () => {
         [owner, addr0, addr1] = await ethers.getSigners();
 
+
         //Deploy Library Contract
         const Library = await ethers.getContractFactory('Library');
         library = await Library.deploy(); 
     });
+
+
+        //console.log(owner, addr0, addr1)
+
+        //Deploy Library Contract
+        const Library = await ethers.getContractFactory('Library');
+        library = await Library.deploy("NEST LIBRARY"); 
+    });
+
+    console.log(process.env);
+
 
     it("Upload File Successfully", async function () {
         let hash = 'gfhfdgfyd';
@@ -72,6 +84,7 @@ describe('Library Contract', () => {
             
             // It shod be continued but can't seem to figure it out
               })
+
 });
 
 
@@ -82,6 +95,7 @@ describe ("Get shared Files", async () => {
     assert.equal(sharedFile.shared_hash, shared_by, "Sharer is correct")
       })
     })
+
 
 
 describe ("File Sharing", async () => {
@@ -108,4 +122,5 @@ describe ("File Sharing", async () => {
 })
 
 })
+
 
