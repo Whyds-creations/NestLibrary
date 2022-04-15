@@ -15,11 +15,14 @@ describe('Library Contract', () => {
 
     beforeEach(async () => {
         [owner, addr0, addr1] = await ethers.getSigners();
+        //console.log(owner, addr0, addr1)
 
         //Deploy Library Contract
         const Library = await ethers.getContractFactory('Library');
-        library = await Library.deploy(); 
+        library = await Library.deploy("NEST LIBRARY"); 
     });
+
+    console.log(process.env);
 
     it("Upload File Successfully", async function () {
         let hash = 'gfhfdgfyd';
